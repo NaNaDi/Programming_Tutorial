@@ -31,6 +31,7 @@ public class SampleClass extends Thread{
 
 	
 	public void executeRunnables(){
+		//ThreadPools helps to execute the threads parallel, FixedThreadPool specifies how many threads run in parallel
 		ExecutorService executor = Executors.newFixedThreadPool(2);
 		executor.submit(runner1);
 		executor.submit(runner2);
@@ -38,7 +39,7 @@ public class SampleClass extends Thread{
 	}
 	
 	public void executeThreads(){
-		 System.out.println(Thread.currentThread().getName());
+		 System.out.println(Thread.currentThread().getName()); //main Thread
 		    for(int i=0; i<10; i++){
 		      new Thread("" + i){
 		        public void run(){
